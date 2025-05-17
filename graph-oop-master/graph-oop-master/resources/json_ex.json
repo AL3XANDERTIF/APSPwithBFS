@@ -1,0 +1,11 @@
+{
+  "nome": "patrizio",
+  "cognome": "marini",
+  "media": 6,
+  "voti": [4, 7, 8, 5, 9, 6],
+  "indirizzo": {
+    "via": "casilina",
+    "civico": 367,
+    "citta": "roma"
+  }
+}
