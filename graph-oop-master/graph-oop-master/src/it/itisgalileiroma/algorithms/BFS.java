@@ -19,27 +19,33 @@ public class BFS {
      */
     public ArrayList<Integer> computeShortestPathsList(Node nodoSorgente) {
         int numeroNodi = grafo.nodes().size();
+
         ArrayList<Integer> distanze = new ArrayList<>();
         ArrayList<Node> coda = new ArrayList<>();
+
         boolean[] visitato = new boolean[numeroNodi];
 
-        // Inizializzazione della lista delle distanze
-        for (int i = 0; i < numeroNodi; i++) {
+
+        for (int i = 0; i < numeroNodi; i++) {          // Inizializzazione della lista delle distanze
             distanze.add(Integer.MAX_VALUE);
         }
 
-        // Distanza dal nodo sorgente a se stesso è 0
-        distanze.set(nodoSorgente.id(), 0);
+
+        distanze.set(nodoSorgente.id(), 0);         // Distanza dal nodo sorgente a se stesso è 0
         visitato[nodoSorgente.id()] = true;
         coda.add(nodoSorgente);
 
+
         while (!coda.isEmpty()) {
-            Node nodoCorrente = coda.remove(0); // Dequeue
+            Node nodoCorrente = coda.remove(0);                             // Dequeue
             int distanzaCorrente = distanze.get(nodoCorrente.id());
 
             int numVicini = nodoCorrente.neighbors().size();
+
             for (int i = 0; i < numVicini; i++) {
+
                 int vicinoId = nodoCorrente.neighbors().get(i);
+
                 if (!visitato[vicinoId]) {
                     visitato[vicinoId] = true;
                     distanze.set(vicinoId, distanzaCorrente + 1);

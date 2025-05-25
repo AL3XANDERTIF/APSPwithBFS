@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class Graph {
 
-    private List<Node> nodes;
-    private List<Edge> edges;
+    private List<Node> nodes = new ArrayList<>();
+    private List<Edge> edges = new ArrayList<>();
 
     public Graph() {}
 
@@ -19,10 +19,10 @@ public class Graph {
         this.edges = edges;
     }
 
-    public Graph(List<Node> nodes) {
-        this.nodes = nodes;
-        this.edges = new ArrayList<Edge>();
-    }
+//    public Graph(List<Node> nodes) {
+//        this.nodes = nodes;
+//        this.edges = new ArrayList<Edge>();
+//    }
 
     public List<Node> nodes() {
         return nodes;
@@ -35,6 +35,7 @@ public class Graph {
     public int addNode(Node node) {
         boolean notEquals = true;
         int indexNode = -1; // we need to check the index of the node to insert (or alreay inserted)
+
 
         for(int i = 0; i < nodes.size(); i++) {
             if(nodes.get(i).id() == node.id()) {
